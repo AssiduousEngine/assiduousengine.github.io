@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>Introducing Assiduous Engine: A C++23 game engine I&#39;ve been working on since January 1st | AssiduousEngine</title><meta name="description" content="The first release of the engine and its editor, a beta for Windows and Linux."><meta property="og:title" content="Introducing Assiduous Engine: A C++23 game engine I've been working on since January 1st | AssiduousEngine"><meta property="og:description" content="The first release of the engine and its editor, a beta for Windows and Linux."><meta property="og:image" content="https://assiduousengine.com/images/Editor.webp"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><style>article[data-astro-cid-eefyg22u]{padding:64px 0 88px}article[data-astro-cid-eefyg22u] h1[data-astro-cid-eefyg22u]{margin:0 0 8px;font-size:clamp(1.9rem,4.2vw,2.7rem)}.eyebrow[data-astro-cid-eefyg22u] a[data-astro-cid-eefyg22u]{color:inherit;text-decoration:none}.body[data-astro-cid-eefyg22u]{margin-top:28px}.body[data-astro-cid-eefyg22u] h2{margin:40px 0 12px}.body[data-astro-cid-eefyg22u] p,.body[data-astro-cid-eefyg22u] li{color:var(--fg)}.body[data-astro-cid-eefyg22u] img{border:1px solid var(--edge);border-radius:12px;margin:24px 0}
+:root{--bg:#121417;--band:#171a1e;--card:#1c2026;--edge:#2b3038;--fg:#e9ebee;--muted:#a0a8b5;--accent:#f58f42;--on-accent:#1f2227;--link:#f7a465;--shadow:0 24px 60px #00000073;--wide:1160px;--text:720px}@media (prefers-color-scheme:light){:root{--bg:#f7f7f5;--band:#efefec;--card:#fff;--edge:#dcdfe4;--fg:#1f2227;--muted:#555b66;--link:#b4560f;--shadow:0 20px 50px #1f222729}}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}body{background:var(--bg);color:var(--fg);margin:0;font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}a{color:var(--link)}img{max-width:100%;height:auto;display:block}h1,h2,h3{letter-spacing:-.01em;line-height:1.2}.wrap{max-width:var(--wide);margin:0 auto;padding:0 16px}.narrow{max-width:var(--text)}.muted{color:var(--muted)}code{font-family:ui-monospace,SF Mono,Menlo,Consolas,monospace;font-size:.92em}.small{font-size:.88rem}.button{border:1px solid var(--edge);background:var(--card);color:var(--fg);border-radius:999px;align-items:center;gap:8px;padding:11px 22px;font-size:.98rem;font-weight:600;text-decoration:none;display:inline-flex}.button:hover{border-color:var(--accent)}.button.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}.button.primary:hover{filter:brightness(1.06)}.buttons{flex-wrap:wrap;gap:12px;display:flex}.eyebrow{letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;font-size:.8rem;font-weight:700}.band{background:var(--band);border-top:1px solid var(--edge);border-bottom:1px solid var(--edge)}section.block{padding:88px 0}section.block h2{margin:0 0 14px;font-size:clamp(1.7rem,3.4vw,2.3rem)}.shot{border:1px solid var(--edge);box-shadow:var(--shadow);border-radius:12px}header.site{z-index:10;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--edge);position:sticky;top:0}header.site .wrap{align-items:center;gap:24px;min-height:64px;display:flex}header.site .brand{flex-shrink:0;align-items:center;display:flex}header.site .brand img{width:auto;height:30px}header.site .brand .light{display:none}@media (prefers-color-scheme:light){header.site .brand .dark{display:none}header.site .brand .light{display:block}}header.site nav{flex:1;align-items:center;gap:4px;min-width:0;display:flex}header.site nav a{color:var(--muted);white-space:nowrap;border-radius:8px;padding:6px 12px;font-weight:500;text-decoration:none}header.site nav a:hover,header.site nav a[aria-current]{color:var(--fg);background:var(--card)}header.site nav .spacer{flex:1}header.site nav a.docs{color:var(--on-accent);background:var(--accent)}@media (width<=760px){header.site .wrap{flex-wrap:wrap;gap:4px 12px;padding-top:10px;padding-bottom:6px}header.site nav{scrollbar-width:none;flex-basis:100%;overflow-x:auto}header.site nav .spacer{flex:1;display:block}header.site nav .community{display:none}}footer.site{border-top:1px solid var(--edge);margin-top:0;padding:48px 0 56px}footer.site .wrap{grid-template-columns:2fr 1fr 1fr;gap:32px;display:grid}@media (width<=760px){footer.site .wrap{grid-template-columns:1fr 1fr}footer.site .about{grid-column:1/-1}}footer.site h4{text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 10px;font-size:.85rem}footer.site ul{margin:0;padding:0;list-style:none}footer.site li{margin:0 0 6px}footer.site a{color:var(--fg);text-decoration:none}footer.site a:hover{color:var(--link)}footer.site .about p{color:var(--muted);max-width:420px;margin:0 0 8px;font-size:.9rem}
+</style></head><body><header class="site"><div class="wrap"><a class="brand" href="/" aria-label="AssiduousEngine, home"><img class="dark" src="/branding/assiduous-logo.svg" alt="AssiduousEngine" width="140" height="30"><img class="light" src="/branding/assiduous-logo-light.svg" alt="AssiduousEngine" width="140" height="30"></a><nav aria-label="Site"><a href="/features/">Features</a><a href="/download/">Download</a><a href="/samples/">Samples</a><a href="/news/" aria-current="page">News</a><span class="spacer"></span><a class="community" href="https://github.com/AssiduousEngine/AssiduousEngine">GitHub</a><a class="community" href="https://discord.gg/WSvxW8mWH5">Discord</a><a class="docs" href="https://docs.assiduousengine.com/">Docs</a></nav></div></header><main><div class="wrap" data-astro-cid-eefyg22u><article class="narrow" data-astro-cid-eefyg22u><p class="eyebrow" data-astro-cid-eefyg22u><a href="/news/" data-astro-cid-eefyg22u>News</a></p><h1 data-astro-cid-eefyg22u>Introducing Assiduous Engine: A C++23 game engine I&#39;ve been working on since January 1st</h1><p class="muted small" data-astro-cid-eefyg22u>7 November 2026</p><div class="body" data-astro-cid-eefyg22u><p><img src="/images/Editor-Market.webp" alt="The editor with a market scene open"></p>
+<p>Let’s get the potentially controversial part out of the way first.</p>
+<p><strong>Was AI used in creating this engine?</strong></p>
+<p>Yes, extensively. AI has been a major part of my development workflow, and the engine also has first-class tooling for AI agents.</p>
+<p>That said, AI is entirely optional. Everything in the engine works without it, and developers can use it just like any other game engine.</p>
+<p>If AI-assisted development isn’t your thing, that’s perfectly fine. I just want to be upfront about how this project was built.</p>
+<h2 id="so-about-the-engine">So, about the engine…</h2>
+<p>Assiduous Engine is a complete game development solution (at least for my needs), written in C++23 and making extensive use of C++ modules.</p>
+<p>Some of its features include:</p>
+<h3 id="editor">Editor</h3>
+<p>A complete editor, developed as a separate application but built on the engine and its asset pipeline.</p>
+<p>It allows you to create and manage projects, author or import assets, write scripts, play-test your games, and deploy them to your target platforms.</p>
+<h3 id="rendering">Rendering</h3>
+<p>A physically based (PBR) forward renderer built on a render graph, featuring:</p>
+<ul>
+<li>Depth prepass and clustered lighting.</li>
+<li>Cascaded sun shadows and shadowed point and spot lights.</li>
+<li>Image-based lighting and reflection probes.</li>
+<li>Decals, sprites, particles, skinned and instanced meshes.</li>
+<li>Render textures for in-game cameras.</li>
+</ul>
+<p><strong>Post-processing:</strong> Ambient occlusion, SSR, screen-space GI, bloom, TAA, MSAA, FXAA, auto exposure, and colour grading.</p>
+<p><img src="/images/Market-Dusk.webp" alt="A market at dusk, built in the engine from a free Fab kit"></p>
+<p><img src="/images/Market-Afternoon.webp" alt="The same market in late afternoon light"></p>
+<h3 id="engine-modules">Engine modules</h3>
+<ul>
+<li>Audio (miniaudio)</li>
+<li>Skeletal animation and property animation</li>
+<li>Physics (Jolt)</li>
+<li>Navigation and pathfinding (Recast + Detour)</li>
+<li>Particles</li>
+<li>Terrain and vegetation</li>
+<li>P2P networking with replication</li>
+<li>GUI (XML + CSS)</li>
+<li>Scripting (AngelScript + Luau)</li>
+</ul>
+<h3 id="asset-pipeline">Asset pipeline</h3>
+<p>An asset processing pipeline that allows you to import assets and cook them for your target platform.</p>
+<h3 id="command-line-tools">Command-line tools</h3>
+<p>Tools for managing projects, invoking the asset pipeline, exporting games, and performing other development tasks.</p>
+<h3 id="agent-tooling">Agent tooling</h3>
+<p>This is something I’ve put considerable effort into.</p>
+<p>The engine provides tooling for working with AI agents to create games. Agents can create projects, create and modify scenes, write scripts, import or create and configure engine assets, play-test games, and export them for target platforms.</p>
+<p>The agentic workflow was designed as a first-class citizen of the engine. The goal is for agents to be able to perform the same development tasks as a human, using the actual engine tooling rather than relying on a collection of disconnected integrations.</p>
+<p>All of the sample games included with the engine were created entirely by agents from specifications.</p>
+<h3 id="other-features">Other features</h3>
+<p>There are plenty of other features worth mentioning:</p>
+<ul>
+<li>Custom shaders.</li>
+<li>Resource hot-reloading.</li>
+<li>Native plugins.</li>
+<li>Running multiple game instances side-by-side in the editor (useful for testing multiplayer).</li>
+<li>Editing multiple scenes side-by-side.</li>
+<li>Flexible editor docking, with panels that can be undocked into separate OS windows (useful for multi-monitor workflows).</li>
+</ul>
+<p>And more…</p>
+<p><img src="/images/Editor-Market-Play.webp" alt="The market playing in the editor’s Game tab"></p>
+<h2 id="a-little-about-the-architecture">A little about the architecture</h2>
+<p>The engine is written in C++23, making extensive use of C++ modules.</p>
+<p>It’s split into five layers, each with its own responsibilities and concerns. Dependencies flow upward through these layers.</p>
+<h3 id="foundation">Foundation</h3>
+<p>The lowest-level libraries. These depend only on external libraries or other Foundation libraries.</p>
+<p>Some examples:</p>
+<ul>
+<li><strong>Core:</strong> Containers, mathematics, system utilities, etc.</li>
+<li><strong>RHI:</strong> DirectX 12, Vulkan, WebGPU, and a Null backend for unit tests and headless applications.</li>
+<li><strong>Shell:</strong> Windowing and input abstraction, backed by SDL3 on desktop and Steam Deck, and Emscripten on the web.</li>
+</ul>
+<p>There are many more Foundation libraries providing the base functionality used by the layers above.</p>
+<h3 id="engine">Engine</h3>
+<p>Implements the opinionated engine layer, providing the gameplay systems and functionality.</p>
+<p>The scene system follows a hybrid ECS model. Entities are identities, components are value types, and component managers (the equivalent of systems in ECS) own the logic and lifecycle of their respective components.</p>
+<p>The goal is to provide the benefits of a data-oriented architecture while offering a friendlier interface than your typical ECS.</p>
+<h3 id="pipeline">Pipeline</h3>
+<p>Defines the engine’s authorable and importable asset types, including textures, models, particle effects, scenes, prefabs, GUI screens and stylesheets, fonts, etc.</p>
+<p>The pipeline also defines builders for each asset type, which cook assets into the engine’s resource format.</p>
+<h3 id="editor-1">Editor</h3>
+<p>Contains all editor functionality, organized and separated by concern.</p>
+<h3 id="tools">Tools</h3>
+<p>Command-line tools for cooking shaders and assets, exporting games, and working with the engine headlessly. This also includes the tooling that allows AI agents to interact with the engine over MCP.</p>
+<h2 id="inspirations">Inspirations</h2>
+<p>The engine was inspired by:</p>
+<ul>
+<li><a href="https://ezengine.net/">ezEngine</a></li>
+<li><a href="https://github.com/apistol78/traktor">Traktor</a></li>
+<li><a href="https://github.com/nem0/LumixEngine">LumixEngine</a></li>
+</ul>
+<p>If you like what they’re doing, please check them out!</p>
+<h2 id="want-to-give-it-a-try">Want to give it a try?</h2>
+<p>You can compile it from source: <a href="https://github.com/AssiduousEngine/AssiduousEngine">Git Repository</a></p>
+<p>Or grab the <a href="/download/">latest download</a> for your platform, or see everything in the <a href="https://github.com/AssiduousEngine/AssiduousEngine/releases/tag/v0.1.0-beta">0.1.0-beta release</a> on GitHub. Currently, the editor and development tooling run on Linux and Windows.</p>
+<p>The engine comes with a few sample projects to get you started, giving you a feel for how it works and showcasing various features. You can grab them from the project manager when you launch the editor.</p>
+<p>I’m currently working on a more ambitious game using the engine, which I hope will help me iron out some of the remaining issues.</p>
+<hr>
+<h2 id="so-why-create-another-game-engine">So, why create another game engine?</h2>
+<p>After writing all of that, I realized there was one more point worth covering.</p>
+<p>The simple answer: Why not? Because I wanted to.</p>
+<p>The more nuanced answer is that other engines just didn’t suit me.</p>
+<p><strong>Unreal:</strong> I never owned hardware that could run Unreal reliably, and I prefer a lighter engine. The kinds of games I want to make don’t require the power of Unreal.</p>
+<p><strong>Unity:</strong> It’s just too closed for me. I’m a tinkerer, and I want to get under the hood of the engine, fix issues, or modify things to suit my needs.</p>
+<p><strong>Godot:</strong> You’d think that, given my attitude towards the two above, Godot would be ideal for me. Well, I absolutely hate its architecture. I think there are some positive things about it, but the negatives outweigh them for me.</p>
+<p>I’ve tried a bunch of open-source engines, and even contributed to some of them. Most had various issues and didn’t quite satisfy the way I wanted to work on games.</p>
+<p>The three that came closest were Lumix, Traktor, and ezEngine, which ultimately became the main inspirations for my own engine. However, each had some shortcomings that prevented me from simply adopting it and getting on with making games.</p>
+<p>My engine has its issues too, but at least it covers all the bases I consider important for my game development work.</p>
+<p>I think it’s reached a point where I can just use it to make games and let that drive any future improvements and evolution of the engine.</p>
+<p>Website: <a href="https://assiduousengine.com">https://assiduousengine.com</a></p>
+<p>Note that the website and documentation are still works in progress and will be completed for the final 0.1 release.</p>
+</div></article></div></main><footer class="site"><div class="wrap"><div class="about"><p>AssiduousEngine is a game engine in C++23, with its editor, asset pipeline and tools.</p><p>The engine is MIT licensed. The AssiduousEngine name and logo are not.</p></div><div><h4>Engine</h4><ul><li><a href="/features/">Features</a></li><li><a href="/download/">Download</a></li><li><a href="/samples/">Samples</a></li><li><a href="/news/">News</a></li><li><a href="https://docs.assiduousengine.com/">Documentation</a></li></ul></div><div><h4>Community</h4><ul><li><a href="https://github.com/AssiduousEngine/AssiduousEngine">GitHub</a></li><li><a href="https://discord.gg/WSvxW8mWH5">Discord</a></li></ul></div></div></footer></body></html>
