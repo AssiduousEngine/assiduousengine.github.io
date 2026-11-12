@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>Assiduous Engine 0.1.0-beta.2 | AssiduousEngine</title><meta name="description" content="The second beta, mostly fixes from the first, a few additions, and one change to scripts."><meta property="og:title" content="Assiduous Engine 0.1.0-beta.2 | AssiduousEngine"><meta property="og:description" content="The second beta, mostly fixes from the first, a few additions, and one change to scripts."><meta property="og:image" content="https://assiduousengine.com/images/Editor.webp"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><style>article[data-astro-cid-eefyg22u]{padding:64px 0 88px}article[data-astro-cid-eefyg22u] h1[data-astro-cid-eefyg22u]{margin:0 0 8px;font-size:clamp(1.9rem,4.2vw,2.7rem)}.eyebrow[data-astro-cid-eefyg22u] a[data-astro-cid-eefyg22u]{color:inherit;text-decoration:none}.body[data-astro-cid-eefyg22u]{margin-top:28px}.body[data-astro-cid-eefyg22u] h2{margin:40px 0 12px}.body[data-astro-cid-eefyg22u] p,.body[data-astro-cid-eefyg22u] li{color:var(--fg)}.body[data-astro-cid-eefyg22u] img{border:1px solid var(--edge);border-radius:12px;margin:24px 0}
+:root{--bg:#121417;--band:#171a1e;--card:#1c2026;--edge:#2b3038;--fg:#e9ebee;--muted:#a0a8b5;--accent:#f58f42;--on-accent:#1f2227;--link:#f7a465;--shadow:0 24px 60px #00000073;--wide:1160px;--text:720px}@media (prefers-color-scheme:light){:root{--bg:#f7f7f5;--band:#efefec;--card:#fff;--edge:#dcdfe4;--fg:#1f2227;--muted:#555b66;--link:#b4560f;--shadow:0 20px 50px #1f222729}}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}body{background:var(--bg);color:var(--fg);margin:0;font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}a{color:var(--link)}img{max-width:100%;height:auto;display:block}h1,h2,h3{letter-spacing:-.01em;line-height:1.2}.wrap{max-width:var(--wide);margin:0 auto;padding:0 16px}.narrow{max-width:var(--text)}.muted{color:var(--muted)}code{font-family:ui-monospace,SF Mono,Menlo,Consolas,monospace;font-size:.92em}.small{font-size:.88rem}.button{border:1px solid var(--edge);background:var(--card);color:var(--fg);border-radius:999px;align-items:center;gap:8px;padding:11px 22px;font-size:.98rem;font-weight:600;text-decoration:none;display:inline-flex}.button:hover{border-color:var(--accent)}.button.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}.button.primary:hover{filter:brightness(1.06)}.buttons{flex-wrap:wrap;gap:12px;display:flex}.eyebrow{letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;font-size:.8rem;font-weight:700}.band{background:var(--band);border-top:1px solid var(--edge);border-bottom:1px solid var(--edge)}section.block{padding:88px 0}section.block h2{margin:0 0 14px;font-size:clamp(1.7rem,3.4vw,2.3rem)}.shot{border:1px solid var(--edge);box-shadow:var(--shadow);border-radius:12px}header.site{z-index:10;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--edge);position:sticky;top:0}header.site .wrap{align-items:center;gap:24px;min-height:64px;display:flex}header.site .brand{flex-shrink:0;align-items:center;display:flex}header.site .brand img{width:auto;height:30px}header.site .brand .light{display:none}@media (prefers-color-scheme:light){header.site .brand .dark{display:none}header.site .brand .light{display:block}}header.site nav{flex:1;align-items:center;gap:4px;min-width:0;display:flex}header.site nav a{color:var(--muted);white-space:nowrap;border-radius:8px;padding:6px 12px;font-weight:500;text-decoration:none}header.site nav a:hover,header.site nav a[aria-current]{color:var(--fg);background:var(--card)}header.site nav .spacer{flex:1}header.site nav a.docs{color:var(--on-accent);background:var(--accent)}@media (width<=760px){header.site .wrap{flex-wrap:wrap;gap:4px 12px;padding-top:10px;padding-bottom:6px}header.site nav{scrollbar-width:none;flex-basis:100%;overflow-x:auto}header.site nav .spacer{flex:1;display:block}header.site nav .community{display:none}}footer.site{border-top:1px solid var(--edge);margin-top:0;padding:48px 0 56px}footer.site .wrap{grid-template-columns:2fr 1fr 1fr;gap:32px;display:grid}@media (width<=760px){footer.site .wrap{grid-template-columns:1fr 1fr}footer.site .about{grid-column:1/-1}}footer.site h4{text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 10px;font-size:.85rem}footer.site ul{margin:0;padding:0;list-style:none}footer.site li{margin:0 0 6px}footer.site a{color:var(--fg);text-decoration:none}footer.site a:hover{color:var(--link)}footer.site .about p{color:var(--muted);max-width:420px;margin:0 0 8px;font-size:.9rem}
+</style></head><body><header class="site"><div class="wrap"><a class="brand" href="/" aria-label="AssiduousEngine, home"><img class="dark" src="/branding/assiduous-logo.svg" alt="AssiduousEngine" width="140" height="30"><img class="light" src="/branding/assiduous-logo-light.svg" alt="AssiduousEngine" width="140" height="30"></a><nav aria-label="Site"><a href="/features/">Features</a><a href="/download/">Download</a><a href="/samples/">Samples</a><a href="/news/" aria-current="page">News</a><span class="spacer"></span><a class="community" href="https://github.com/AssiduousEngine/AssiduousEngine">GitHub</a><a class="community" href="https://discord.gg/WSvxW8mWH5">Discord</a><a class="docs" href="https://docs.assiduousengine.com/">Docs</a></nav></div></header><main><div class="wrap" data-astro-cid-eefyg22u><article class="narrow" data-astro-cid-eefyg22u><p class="eyebrow" data-astro-cid-eefyg22u><a href="/news/" data-astro-cid-eefyg22u>News</a></p><h1 data-astro-cid-eefyg22u>Assiduous Engine 0.1.0-beta.2</h1><p class="muted small" data-astro-cid-eefyg22u>10 November 2026</p><div class="body" data-astro-cid-eefyg22u><p><img src="/images/Editor-Village.webp" alt="The editor with a village scene open"></p>
+<p>The second beta of Assiduous Engine is out.</p>
+<p>This release is mostly about fixing issues from the first beta, along with a few additions and one change to scripting that you’ll need to account for if you’ve written scripts for 0.1.0-beta.</p>
+<h2 id="if-youre-upgrading-from-010-beta">If you’re upgrading from 0.1.0-beta</h2>
+<p>Scene-wide functionality is now accessed directly through the scene rather than through separate helper classes.</p>
+<p>For example, <code>ScenePhysics::of(scene)</code> and similar accessors are gone. These are now properties of the scene itself, so you’ll need to update any scripts that use the old approach:</p>
+<table>
+<thead>
+<tr>
+<th>Before</th>
+<th>Now</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ScenePhysics::of(scene)</code></td>
+<td><code>scene.physics</code></td>
+</tr>
+<tr>
+<td><code>SceneAnimation::of(scene)</code></td>
+<td><code>scene.animation</code></td>
+</tr>
+<tr>
+<td><code>SceneAudio::of(scene)</code></td>
+<td><code>scene.audio</code></td>
+</tr>
+<tr>
+<td><code>SceneRender::of(scene)</code></td>
+<td><code>scene.render</code></td>
+</tr>
+<tr>
+<td><code>SceneParticles::of(scene)</code></td>
+<td><code>scene.particles</code></td>
+</tr>
+<tr>
+<td><code>SceneSplines::of(scene)</code></td>
+<td><code>scene.splines</code></td>
+</tr>
+<tr>
+<td><code>SceneScripts::of(scene)</code></td>
+<td><code>scene.scripts</code></td>
+</tr>
+<tr>
+<td><code>ScenePrefabs::of(scene)</code></td>
+<td><code>scene.prefabs</code></td>
+</tr>
+<tr>
+<td><code>DebugDraw::of(scene)</code></td>
+<td><code>scene.debugDraw</code></td>
+</tr>
+<tr>
+<td><code>EnvironmentSettings::of(scene)</code></td>
+<td><code>scene.environment</code></td>
+</tr>
+<tr>
+<td><code>PostProcessSettings::of(scene)</code></td>
+<td><code>scene.postProcess</code></td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="https://docs.assiduousengine.com/scripting/script-api/">script API docs</a> use the new spelling throughout.</p>
+<h2 id="whats-new">What’s new</h2>
+<ul>
+<li><strong>Animation one-shots:</strong> <code>scene.animation.playOneShot(entity, clip)</code> plays a clip once over the entity’s current animation, then returns to whatever it was doing before. Behaviours can use <code>onAnimationFinished(clip)</code> to know when playback ends. <code>setClip</code> also supports crossfading now, and <code>clipLength</code> gives you the duration of a clip.</li>
+<li><strong>Adding and removing components:</strong> <code>Component.addTo(entity)</code> and <code>Component.removeFrom(entity)</code> are now available alongside <code>Component.of</code>, in both AngelScript and Luau.</li>
+<li><strong>Input prompts:</strong> <code>Input.describe(action)</code> tells you which key or button is bound to an action, making it easier to show players what to press.</li>
+<li><strong>Scene references in components:</strong> Native component fields can now reference a scene, which is useful for things like a level’s exit destination. You can pick the scene in the inspector, and the reference is preserved when exporting.</li>
+<li><strong>External file changes:</strong> The editor now detects scenes, prefabs and assets that change outside the editor, whether from a <code>git pull</code> or another tool.</li>
+<li><strong>Script simulation:</strong> The Simulate option on a scene page now shows what your scripts draw on screen.</li>
+</ul>
+<h2 id="fixes">Fixes</h2>
+<p>Some of the more noticeable ones:</p>
+<ul>
+<li>Games launched from their project folder can now spawn prefabs and load scenes from scripts.</li>
+<li>Pruned exports no longer miss assets referenced only through script properties.</li>
+<li>Prefabs are no longer read from disk every time they’re spawned.</li>
+<li>Destroying an entity now properly removes its colliders from the physics world and stops any sounds it was playing.</li>
+<li>Setting struct properties from scripts now works, including nested properties like <code>light.color.r</code>.</li>
+<li>Importing assets no longer freezes the editor for several seconds in larger projects.</li>
+<li>Context menus now appear in the correct position at UI scales other than 100%.</li>
+</ul>
+<p>The full list is in the <a href="https://github.com/AssiduousEngine/AssiduousEngine/blob/v0.1.0-beta.2/CHANGELOG.md">changelog</a>.</p>
+<h2 id="get-it">Get it</h2>
+<p>Grab the <a href="/download/">latest download</a> for your platform, or see everything in the <a href="https://github.com/AssiduousEngine/AssiduousEngine/releases/tag/v0.1.0-beta.2">0.1.0-beta.2 release</a> on GitHub. The sample games come with the new spelling, and the editor’s project manager downloads the ones for its version.</p>
+<p>If you run into something, open an issue and I’ll take a look.</p>
+</div></article></div></main><footer class="site"><div class="wrap"><div class="about"><p>AssiduousEngine is a game engine in C++23, with its editor, asset pipeline and tools.</p><p>The engine is MIT licensed. The AssiduousEngine name and logo are not.</p></div><div><h4>Engine</h4><ul><li><a href="/features/">Features</a></li><li><a href="/download/">Download</a></li><li><a href="/samples/">Samples</a></li><li><a href="/news/">News</a></li><li><a href="https://docs.assiduousengine.com/">Documentation</a></li></ul></div><div><h4>Community</h4><ul><li><a href="https://github.com/AssiduousEngine/AssiduousEngine">GitHub</a></li><li><a href="https://discord.gg/WSvxW8mWH5">Discord</a></li></ul></div></div></footer></body></html>
